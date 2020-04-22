@@ -8,7 +8,7 @@
 
 前台：[m-mall](https://github.com/skyvow/m-mall)
 
-后台：[m-mall-admin](https://mini.gfdbm.com/jradmin.php?m=admin&c=index&a=login)
+后台：[铭炎科技](https://mini.gfdbm.com/jradmin.php)
 
 ## 目录结构：
 
