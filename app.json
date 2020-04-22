@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/start/index",
+    "pages/index/index",
+    
+    "pages/goods/detail/index",
+    "pages/classify/index",
+    "pages/cart/index",
+    "pages/address/list/index",
+    "pages/address/add/index",
+    "pages/address/edit/index",
+    "pages/address/confirm/index",
+    "pages/order/list/index",
+    "pages/order/confirm/index",
+    "pages/order/detail/index",
+    "pages/goods/list/index",
+    "pages/goods/classify/index",
+    "pages/serach/index",
+    "pages/writing/index",
+    "pages/search_list/index",
+        
+    "pages/help/list/index",
+    "pages/help/detail/index",
+    "pages/search/index",
+    "pages/about/index",
+    "pages/login/index",
+    "pages/user/index"
+  ],
+  "permission": {
+    "scope.userLocation":{
+      "desc": "你的位置信息将用于获取附近门店" 
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#007AFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小商城",
+    "backgroundColor": "",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#007A",
+     "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/images/iconfont-home.png",
+        "selectedIconPath": "assets/images/iconfont-home-active.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "iconPath": "assets/images/icon-search.png",
+        "selectedIconPath": "assets/images/iconfont-search-active.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "iconPath": "assets/images/iconfont-list.png",
+        "selectedIconPath": "assets/images/iconfont-list-active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "assets/images/iconfont-cart.png",
+        "selectedIconPath": "assets/images/iconfont-cart-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "assets/images/iconfont-user.png",
+        "selectedIconPath": "assets/images/iconfont-user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

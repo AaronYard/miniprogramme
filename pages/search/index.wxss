@@ -1,0 +1,56 @@
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+
+.ctn-block{
+        display: block;
+        background-color: #bbb;
+        font-size: 50px;
+    }
+    .ctn-block .child1{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin:10px 0;
+        vertical-align: middle;
+        background-color: aliceblue;
+    }
+    
+
+    .pop-viphead-nologinbox {
+        width:500px;
+    }
+ 
+    .pop-viphead-nologin-icon {
+        display:inline-block;
+        width: 50px;
+        height: 50px;
+        background:red;
+    }
+ 
+    .pop-viphead-nologin-txt {
+        display: inline-block;
+        color: #333;
+        font-size: 12px;
+        margin-left:2px;
+    }
+ 
+    .pop-viphead-nologin-btn {
+        display: inline-block;
+        margin-left: 3px;
+        width: 50px;
+        height: 50px;
+        background:blue;
+    }
+ 
+    
+    .pop-viphead-nologin-icon,.pop-viphead-nologin-txt,.pop-viphead-nologin-btn{
+        vertical-align: middle;
+    }

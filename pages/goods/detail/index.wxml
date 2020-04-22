@@ -1,0 +1,167 @@
+<scroll-view class="scroll-list" scroll-y="true" style="height: 100%" bindscrolltolower="lower">
+<view class="container" style="background:#6662;height:16rem;">
+    <swiper class="swiper_box" style="width:100%;height:100%;" indicator-dots="{{ indicatorDots }}" vertical="{{ vertical }}"
+            autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
+        <block wx:for="{{ goods.item.images }}" wx:key="key">
+            <swiper-item>
+                <image style="width:100%;" src="{{ item.path}}" class="slide-image" data-index="{{key}}" bindtap="previewImage" />
+
+            </swiper-item>
+        </block>
+       
+    </swiper>
+    <view class="shopping_container">
+        <view class="name">{{ goods.item.title }}</view>
+        <view class="price">¥ {{ goods.item.price }}</view>
+        <view class="ship_fee" style="display:flex;justify-content:space-between;font-size:0.8rem;">
+          <view  bindtap="btnClick3" type="primary">运费 免运费</view>
+          
+          <view>销量 69</view>
+          <view><text class="remark">剩余{{ goods.item.remark }}</text></view>
+        </view>
+
+        <view class="express" style="display:flex;justify-content:space-between;height:1.6rem;line-height:1.6rem;padding:0.4rem;background:#fff;margin-top:0.5rem;">
+          <view style="display:flex;align-items:center;">
+            <view style="">促销</view>
+            <view style="width:1.8rem;height:1rem;line-height:1.1rem;text-align:center;font-size:0.6rem;margin-right:0.8rem;margin-left:0.8rem;border:solid 0.05rem red;border-radius:0.15rem;">包邮</view>
+            <view style="font-size:0.8rem;">满20元部分地区享运费优惠</view>
+          </view>
+          <view style="width:36rpx;height:36rpx">
+          <image style="width:100%;height:100%" src="../../../assets/images/right-arrow.png"></image>
+          </view>
+        </view>
+        
+
+        <view class="express" style="display:flex;justify-content:space-between;height:1.6rem;line-height:1.6rem;padding:0.4rem;background:#fff;margin-top:0.5rem;">
+          <view style="display:flex;align-items:center;">
+            <view style="">配送</view>
+            
+            <view style="font-size:0.6rem;margin-left:0.8rem;">同城送</view>
+
+            <view style="width:1.8rem;height:1rem;line-height:1.1rem;text-align:center;font-size:0.7rem;margin-left:0.8rem;">自提</view>
+          </view>
+          <view style="width:36rpx;height:36rpx">
+          <image style="width:100%;height:100%" src="../../../assets/images/right-arrow.png"></image>
+          </view>
+        </view>
+        
+        <view class="store">
+          <view style="display:flex;justify-content:space-between;height:80%;">
+                <view style="width:40%;display:flex;">
+                  <view style="width:40%;background:black;margin-right:0.2rem;"></view>
+                  <view style="font-size:0.7rem;">超市发沙城店</view>
+                </view>
+                <view style="margin-top:0.5rem;font-size:0.6rem;width:10%;height:1rem;text-align:center;line-height:1rem;border-radius:0.5rem;border:0.05rem solid red;">进店</view>
+          </view>
+          <view style="font-size:0.7rem;height:10%;">长城北路与勇敢西街路口北侧</view>
+        </view>
+        <view style="display:flex;height:1.5rem;line-height:1.5rem;background:#fff;margin-top:0.5rem;padding:0.4rem;justify-content:space-between;">
+          <view>宝贝评价</view>
+          <view style="font-size:0.7rem;">暂无评价</view>
+        </view>
+
+        </view>
+<view style="position:relative;">
+            <view class="weui-navbar">
+                    <view wx:for="{{ tabs.value }}" id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">商品详情和任何热和任何人火热很多人特惠大好人符合符合</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">成交记录过后仍然会退回人头交通法规</view>
+            </view>
+    </view>
+    
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+            <view class="weui-cell__bd"></view>
+            <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+                <view style="display: inline-block;vertical-align:middle; font-size: 17px;"></view>
+              
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+            <view class="weui-cell__bd"></view>
+            <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+                <view style="display: inline-block;vertical-align:middle; font-size: 17px;"></view>
+                <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
+            </view>
+        </view>
+    </view>
+
+    <view class="car-plus" style="display:flex;justify-content:space-between;">
+      <view  data-url="../../index/index" bindtap="switch_page" style="font-size:0.6rem;width:1.5rem;">
+        <view style="height:60%;">
+        <image src="../../../assets/images/iconfont-home.png" style="width:100%;height:100%;" />
+        </view>
+        <view style="height:1rem;color:#666;line-height:1rem;">首页</view>
+      </view>
+      <view style="font-size:0.6rem;width:1.5rem;">
+        <view style="height:60%;">
+        <image src="../../../assets/images/iconfont-kefu.png" style="width:100%;height:100%;" />
+        </view>
+        
+        <view style="height:1rem;color:#666;line-height:1rem;">客服</view>
+      </view>
+      <!-- <view style="font-size:0.6rem;width:1.8rem;">
+        <view style="height:60%;">
+        <image src="../../../assets/images/iconfont-cart.png" style="width:100%;height:100%;" />
+        </view>
+        <view style="height:1rem;color:#666;line-height:1rem;">购物车</view>
+      </view> -->
+      <view  data-url="../../cart/index" bindtap="switch_page" class="weui-cells weui-cells_after-title">
+        <view class="weui-cell" style="display:block;padding:inherit;margin-top:0.2rem;font-size:0.6rem;">
+            <view class="weui-cell__hd" style="width:50rpx;height:50rpx;position: relative;margin-right: 10px;">
+                <image src="../../../assets/images/iconfont-cart.png" style="width:100%;height:100%;" />
+                <view class="weui-badge" style="position: absolute;top: -.2em;right: -.4em;">{{total}}</view>
+            </view>
+            <view style="height:1rem;color:#666;line-height:1rem;">购物车</view>
+        </view>
+      </view>
+      <view style="display:flex;">
+        <view style="width:6rem;background:purple;color:#fff;" bindtap="showModal">加入购物车</view>
+        <view style="width:6rem;background:red;color:#fff;"  bindtap="confirmOrder">立即购买</view>
+      </view>
+    </view>
+</view>
+
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+
+      <view style="display:flex;justify-content:space-between;margin:0 0 0.2rem 0.9rem;">
+        <view style="height:4rem;display:flex;">
+         
+          <view style="width:5rem;height:4rem;background:black;display:flex;position:relative;top:-0.5rem;border-radius:0.2rem;-webkit-border-radius:0.2rem;">
+          <image style="width:100%;height:100%" src="{{goods.item.img}}"></image>
+          </view>
+           <view style="font-size:0.7rem;height:4rem;padding:0.5rem 0 0 0.5rem;">
+            <view>{{goods.item.title}}</view>
+            <view style="color:red;font-size:0.8rem;">￥{{goods.item.price}}</view>
+          </view>
+        </view>
+        <view style="width:1.3rem;height:1.3rem;padding:0.5rem 0.5rem 0 0;" bindtap="hideModal">
+        
+          <image style="width:100%;height:100%;" src="{{cance_icon}}" />
+        </view>
+      </view>
+    <view style="padding-top:0.05rem;border-top:0.05rem solid #6666;display:flex;justify-content:space-between;font-size:0.8rem;margin:0 0 0.2rem 0.9rem;">
+      <view>
+        <view style="padding-top:0.4rem;">购买数量:</view>
+        <view style="color:#666;">剩余3332件:</view>
+      </view>
+      <view style="display:flex;margin:0.5rem 0.5rem 0 0;">
+      <input class="input act" data-nums="{{nums}}" bindtap="increase"  type="number" disabled value="+" />
+       <input class="input"   type="number" value="{{nums}}" />
+       <input class="input act" data-nums="{{nums}}" bindtap="decrease"  type="number" disabled value="-" />
+      </view>
+    </view>
+    <view style="display:flex;height:2.5rem;line-height:2.5rem;color:#fff;">
+        <view bindtap="addCart" style="width:100%;background:red;text-align:center;">加入购物车</view>
+    </view>
+</view>
+</scroll-view>

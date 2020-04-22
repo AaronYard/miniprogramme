@@ -1,0 +1,4 @@
+/* pages/order/detail/index.wxss */
+.weui-media-box__desc{
+  color:inherit !important;
+}

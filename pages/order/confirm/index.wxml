@@ -1,0 +1,44 @@
+<view class="address">
+    <view class="weui-panel">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text" bindtap="redirectTo">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{ address.item.name }} {{ address.item.gender === '1' ? '女士' : '先生' }} {{ address.item.tel }}</view>
+                <view class="weui-media-box__desc">{{ address.item.address }}</view>
+                <view class="addr">
+                    <image class="icon" src="../../../assets/images/iconfont-addr-default.png" />
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="weui-form-preview">
+    <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">订单总价</view>
+            <view class="weui-form-preview__value_in-hd">¥ {{carts.total_price }}</view>
+        </view>
+    </view>
+    <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item" wx:for="{{ carts.items }}" wx:key="">
+            <view class="weui-form-preview__label">{{ item.name }}</view>
+            <view class="weui-form-preview__value">x{{ item.price }} ¥ {{ item.nums }}</view>
+        </view>
+    </view>
+    <view class="weui-cell" id="js_cell">
+            <view class="weui-cell__hd"><label class="weui-label">买家留言：</label></view>
+            <view class="weui-cell__bd">
+                <input class="jsinput"   type="text" placeholder="留言建议提前协商（50字以内）" value="" />
+                <button id="js_input_clear" class="weui-btn_reset weui-btn_icon weui-btn_input-clear">
+                  <i class="weui-icon-clear"></i>
+                </button>
+            </view>
+    </view>
+    <!-- <view class="weui-form-preview__ft">
+        <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="addOrder">立即支付</navigator>
+    </view> -->
+    <view class="container">
+        <button type="primary"  bindtap="addOrder" bindtap="addOrder">提交订单</button>
+    </view>
+</view>

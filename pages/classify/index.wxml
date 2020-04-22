@@ -1,0 +1,48 @@
+<import src="../../common/prompt.wxml"/>
+<include src="../../common/header/header.wxml"/>
+<!-- <scroll-view class="scroll-list" scroll-y="true" style="height: 100%" bindscrolltolower="lower">
+	<view class="weui-cells" wx:if="{{ !!classify.paginate.total }}">
+	    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ classify.items }}" wx:key="" bindtap="navigateTo" data-id="{{ item._id }}">
+	        <view class="weui-cell__bd">{{ item.name }}</view>
+	        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	    </navigator>
+	</view>
+    <template is="prompt" data="{{ prompt }}"/>
+</scroll-view> -->
+
+<view class="container" style="margin-top:100px !important;">  
+  <!--左侧栏-->
+  <scroll-view scroll-y="true" class='scroll_left'  style="height:{{winHeight}}px;" scroll-with-animation="true" scroll-top="{{scrollTop}}">
+    <view class="nav_left"> 
+      <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">  
+        <!--当前项的id等于item项的id，那个就是当前状态-->  
+        <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->  
+        <view class="nav_left_items {{curNav == idx ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}" id="{{idx}}">{{itemName[0].name}}</view>  
+      </block>  
+    </view>
+  </scroll-view>
+
+  <!--右侧栏-->
+  <scroll-view scroll-y="true" class="scroll_right" style="height:{{winHeight}}px;" scroll-into-view="{{scrollTopId}}" scroll-with-animation="false" bindscroll="scroll">
+    <view class="nav_right"> 
+      <view class='mink' wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">
+        <view class='minl' id='{{idx}}'>{{itemName[0].name}}</view>
+          <block wx:for="{{itemName}}" wx:key="*this" wx:for-index="idex"> 
+            <view class="nav_right_items" wx:if="{{idex>0}}">  
+              <navigator url="../goods/list/index?cate_id={{item.id}}" hover-class="other-navigator-hover">
+                <view>   
+                  <image src="{{item.picture}}" style="background:red;"></image>
+                  <view >  
+                    <text>{{item.desc}}</text>  
+                  </view> 
+                </view>  
+              </navigator>  
+            </view>      
+          </block> 
+        </view>
+
+        
+      <view style="width:100%;height:30rpx;background:#f0f4f7"></view>       
+    </view>
+  </scroll-view>
+</view>

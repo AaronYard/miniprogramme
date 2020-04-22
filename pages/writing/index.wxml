@@ -1,0 +1,45 @@
+
+<view class="weui-panel weui-panel_access" style="margin-top:0 !important;">
+   
+    <view class="weui-panel__bd">
+      <view style="width:100%;height:500rpx;">
+          <image src="{{img}}" style="width:100%;height:100%;" />
+      </view>
+    </view>
+
+    <view style="display:flex">
+      <view class="weui-cell weui-cell_input">
+
+        <view class="weui-cell__hd">
+
+          <view class="weui-label">内容</view>
+
+        </view>
+
+        <view class="weui-cell__bd">
+
+          <input class="weui-input" bindinput="bindKeyInput" placeholder="请输入内容" value="{{string}}" />
+
+        </view>
+
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title" style="display:flex">
+        <view class="weui-btn-area" style="line-height:2.55555556;">
+
+         <view>点击右侧选择字体</view>
+        </view>
+        <view class="weui-btn-area">
+
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+
+            <button type="default">{{array[index]}}</button>
+
+          </picker> 
+        </view>
+    </view>
+</view>
+
+    
+<include src="../../common/footer/footer.wxml"/>
